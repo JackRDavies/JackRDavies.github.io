@@ -1,0 +1,98 @@
+<div class="mdl-typography--font-regular">
+   <div class="page-pi">
+     <div class="spacer small"></div>
+     <img src="images/raspberry-pi-logo.png" style="float: right; height: 80px;"><h2 class="inst white" style="position: relative; padding-left: 6px;">Raspberry Pi Projects</h2>
+     <div class="spacer small"></div>
+   </div>
+  <div class="darkbackground white content" style="">
+    During my time at secondary school, I had a desperation to get more into developing software that allowed me to control more than just content on a screen. I wanted to be able to interact with the real world, through hardware and so I did just that. I had entered a competition back in the year of 2013 which was named "The hour of code", which was backed by the Raspberry Pi foundation and Google, to provide schools with 20 Raspberry Pi's.<br><br>
+    
+    I was the only student in the entirety of my school to compete and win. All that was needed of me was to take part in an online page that required me to develop some simple programs, which consisted of both simple code and drag/drop code blocks.<br><br>
+    
+    The staff at my school were impressed with my achivement and so was I. Out of the 20 units that were assigned to the school, I was allowed to keep 5 of them for myself. Of course, I made good use of them.<br><br>
+    
+    You're probably wondering what a Raspbery Pi is, well it's a single board computer that is very energy efficent and can be powered by a mobile phone charger. It features an energy efficient ARM processor, GPIO (General Input and Output) pins, HDMI, audio port, Ethernet and USB ports, making it a complete computer that can be attached to a TV or monitor. It runs Linux, an open-source operating system.<br><br>
+    
+    <img src="images/1002.jpg" class="contPic"><span style="vertical-align:top">This is what the Raspberry Pi looks like. It's the size of a credit card!</span><br><br>
+    
+    <h3 class="inst white">1.) My first robot</h3>
+    
+    With the 5 Pi's I had used them for different projects, one of the first being a robot. I had persued my wish of interacting with hardware and programmed my first robot, which itilised an old toy as the case, an RC car reciever, LED's and a speaker. Here is what the final outcome was:<br><br>
+    <center><iframe class="ytVideo" src="https://www.youtube.com/embed/LN1dgR73eQI" frameborder="0" allowfullscreen></iframe></center><br>
+    Sorry about the bad video quality.<br><br>
+    
+    
+    <center><a href="#Pi-robot"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Pi-robotReadMore" onclick="visibility('show', 'Pi-robot'); hideself(event)">Read more</button></a></center>
+    
+    <a name="Pi-robot"></a>
+    <div id="Pi-robot" class="hidden-content"><!-- Anohther page that is embedded into this one -->
+      This was my very first robotics project and there was a LOT of things for me to learn, such as how to drive motors, figure out what GPIO pin did what and so forth. The even more difficult task was making an easy-to-use user interface that allowed me to interact with the robot more convenientlty. I had initially used a H-Bridge circuit like one of <a href="http://www.ebay.co.uk/itm/like/251521203003?limghlpsr=true&hlpv=2&ops=true&viphx=1&hlpht=true&lpid=122&chn=ps&googleloc=9045475&poi=&campaignid=207297426&device=c&adgroupid=13585920426&rlsatarget=pla-131843271906&adtype=pla&crdt=0&ff3=1&ff11=ICEP3.0.0-L&ff12=67&ff13=80&ff14=122&ul_noapp=true">these</a> but later discovered that it was unable to give full power to my motors as it was designed for 12v power, not 5v. As such, I resorted to more "abnormal" methods of driving my motors - that being an RC Car reciever.<br><br>
+      
+      I had taken the main board from an RC Car and solderd some IO headers to the top of it, to make it easier to attach and remove wires, making it more modular. After my modifications, I had to attach the motors to the board via the headers I had soldered and run a program named <a href="https://github.com/bskari/pi-rc">Pi-RC</a>, which allowed me to figure out the modulation that the RC Board responds to, thus allowing me to control the motors via radio waves.<br><br>
+      
+      Of course, I wanted to control the robot from practically anything that I have, so I opted into using a webserver, which is where I also gained a stronger interest in website design. This seemed like a daunting task at first as every time I clicked a button on the website, the page would refresh so it wasn't very convenient to use and the robot would just crash into obstacles. I did my research and found an awesome framework named <a href="https://jquery.com/">JQuery</a>, which suppored sending HTTP requests without leaving or refreshing the page, which was great!<br><br>
+      
+      I also needed a way of connecting my devices to the robot so I purchased an <a href="https://www.ebay.co.uk/itm/Edimax-150Mbps-Wireless-802-11B-G-N-Nano-USB-Adapter-EW-7811Un-WORLDS-SMALLEST-/391217801400?hash=item5b1665e8b8:g:17EAAOSwe7BW1MPQ">Edimax WiFi adapter from ebay</a> and then configured the system to use it as a hotspot. Of course, this also meant that I had to learn how to configure the Linux networking system to be able to lease IP addresses, allow the devices to interconnect with one another etc. The programs I used to make this all possible were <a href="https://w1.fi/hostapd/">hostapd</a>, <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> and <a href="https://httpd.apache.org/">apache2</a><br><br>
+      
+      This is what the insides of the robot looked like:<br><br>
+      
+      <img src="images/robot/IMG_20150703_224039.jpg" class="contPic"><span style="vertical-align:top">The brown board in the middle is the RC reciever which is used to control the robots motors</span>
+    </div>
+
+    <h3 class="inst white">2.) Pi-Powered server</h3>
+    
+    One of the advantages of a Raspberry Pi is how energy efficent they are. They can operate off of a 5v 1A power supply and use about 2 pense a day, which is fantastic as the Pi can be powered on all the time and not be a concern in terms of how much it costs to run it continuously.<br><br>
+    
+    I took advantage of the Pi's size and power consumption and turned it into a personal home file server aswell as a website server and VPN (Virtual Private Network), all of which is configured through the command line interface (CLI). Admittedly the Pi isn't a very powerful device so not a lot should be expected of it, as the one I am using only has a single core ARMv6 700MHz CPU with 512MB of RAM. This just about suits my needs perfectly, never the less.<br><br>
+    
+    Want to know how I made it?<br><br>
+    
+    <center><a href="#Pi-server"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Pi-serverReadMore" onclick="visibility('show', 'Pi-server'); hideself(event)">Read more</button></a></center>
+    
+    <a name="Pi-server"></a>
+    <div id="Pi-server" class="hidden-content"><!-- Anohther page that is embedded into this one -->
+      Setting up a Raspberry Pi as a server is a fairly straight forward task. For this section, I'll cover the process of installing a basic file and web server. Setting up a VPN is more of a daunting and lengthy task but there is tutorials on the internet that explain it much better than I, such as <a href="http://www.bbc.co.uk/news/technology-33548728">this</a>.<br><br>
+      
+      <h3 class="inst white">The webserver</h3>
+      
+      This is really easy to do and takes a matter of minutes if you have a decent internet connection. To begin with, open a terminal on your Raspberry Pi and type the following command:<br>
+      <pre class="code-sample">
+sudo apt-get update
+sudo apt-get install apache2 php5</pre>
+      This may ask to confirm the install operation, if it does just type the letter Y and hit enter. The Pi should download and install the program(s).<br><br>
+      
+      <img src="images/Pi-server/2016-03-25-211819_1024x768_scrot.png" class="contPic">
+      <img src="images/Pi-server/2016-03-25-212251_1024x768_scrot.png" class="contPic">
+      
+      <br><br>Once complete, cd to the following folder, like this:<br><br>
+      
+      <img src="images/Pi-server/2016-03-25-212334_1024x768_scrot.png" class="contPic"><br><br>
+      
+      Notice the index.html? Thats a webpage on the webserver and it can be editied freely. It can even be expaned to look like more complex things, such as my old project:<br><br>
+      
+      <img src="images/Pi-server/wow.png" class="contPic"><br><br>
+      
+      This is an old project that I made a while back, when I was stil learning HTML. It's purpose was to be able to monitor the Pi's network traffic.<br>
+      
+      <h3 class="inst white">The file server</h3>
+      
+      This is a really simple one. The Pi is already hosting a file server but it is part of the SSH service. Simply download a program named <a href="https://filezilla-project.org/download.php">Filezilla Client</a>. Once installed onto your personal computer, open Filezilla and enter your Pi's IP address and login credentials, specifying port 22 as the port number, then click "quick connect". Example:<br><br>
+      
+      <img src="images/Pi-server/Screenshot 2016-03-25 21.46.06.png" class="contPic"><br><br>
+      
+      Thats pretty much it!
+    </div>
+    
+    <h3 class="inst white">3.) RC Controller</h3>
+    
+    This is a simple one. The Raspberry Pi's Broadcom SoC has the ability to transmit FM waves! There isn't much to say about this project but I did make use of my <a href="http://www.piface.org.uk/products/piface_control_and_display/">PiFace CAD</a> to make it a little more fun. More information can be found about this project over at the <a href="https://github.com/bskari/Pi-RC">PiRC Github repository</a>, where the developer goes into detail about how this program works.<br><br>
+    
+    This is the script that I made to work with my Piface Control and Display: <a href="https://github.com/bskari/pi-rc/blob/master/pifacecad_interactive_control.py">https://github.com/bskari/pi-rc/blob/master/pifacecad_interactive_control.py</a>. Here is a video of Pi-RC with my PiFace:<br><br>
+    
+    <center><iframe class="ytVideo" src="https://www.youtube.com/embed/5_PprRUVM3I" frameborder="0" allowfullscreen></iframe></center>
+ 
+   <h3 class="inst white">What about the others?</h3>
+   
+   The last 2 of my Pi's were used as a TV Media Center, through the power of <a href="http://wiki.openelec.tv/index.php/Raspberry_Pi">Kodi Media Center</a> - an opensource multimedia entertainment center. The other was used as anoher file and web server which is mainly for development and testing purposes. Not much to say about it :)<br><br>
+  </div>
+</div>

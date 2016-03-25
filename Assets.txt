@@ -1,0 +1,31 @@
+Used assets:
+
+jquery-1.12.0.mi    Used for fetching content dynamically and for animation.    jquery.com/
+
+material.min.css,    Used for theming the page with Googles' Material Design    www.getmdl.io/
+material.min.js,
+icon_familyMaterialIcons.css
+
+styles.css    Used for theming the website    Made it myself
+
+font_RoboReg.css,                 Used for applying the Google Roboto font    www.google.com/fonts/specimen/Roboto
+Everything in the fonts folder
+
+batch_code.png    Used as the background for the "about me" link    Made it myself with Paint.NET
+
+circuitboard.png    Used as the background for the top of the page    Made it myself with Paint.NET
+
+me.jpg    A picture of me, for the top of the page.    Made it myself, with a camera.
+
+Everything in images/Pi-server and images/networking    Screenshots of projects and activities    Took it myself with a screenshot tool.
+
+Everything in images/photogtaphy    Pictures I took    Took them myself with a camera.
+
+pi-background.png    Used as the background for the title of other pages    Made it myself with Paint.NET
+
+raspberry-pi-logo.png    Used on the titlebar of the Raspberry Pi section    raspberrypi.org
+
+sandwell3_600.jpg    Used as the background for the "college studies" link    http://www.ashandlacy.com/press-releases/2012/9/12/ashzips-permanent-waves-at-sandwell-college.html
+
+1002.jpg    A picture of the Raspberry Pi Model B    http://www.atomsindustries.com/assets/images/items/1002/1002.jpg
+
