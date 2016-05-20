@@ -417,6 +417,10 @@ h3.inst {
 .content { padding: 2em 1em 2em 1em; }
 
 .darkbackground {
+  background-color: #212121;
+}
+
+.whitebackground {
   background-color: white;
 }
 
