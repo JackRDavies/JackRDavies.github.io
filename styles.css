@@ -282,7 +282,7 @@ h2.inst {
   font-size: 28pt;
 }
 
-.white { color: white; }
+.white { color: black; }
 .black { color: black; }
 
 h3.inst {
@@ -417,7 +417,7 @@ h3.inst {
 .content { padding: 2em 1em 2em 1em; }
 
 .darkbackground {
-  background-color: #212121;
+  background-color: white;
 }
 
 .spacer { height: 4em; }
